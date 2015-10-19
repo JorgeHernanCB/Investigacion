@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_consulta_1" value="name:cedulaDocente;datatype:string,name:Fotografia;datatype:blob,name:nombre;datatype:string,name:apellido;datatype:string,name:fechaNacimiento;datatype:string,name:lugarNacimiento;datatype:string,name:genero;datatype:string,name:EstadoCivil;datatype:string,name:numeroHijos;datatype:string,name:facultad;datatype:string,name:programa;datatype:string,name:direccion;datatype:string,name:municipio;datatype:string,name:telefonoFijo;datatype:string,name:telefonoCelular;datatype:string,name:correo;datatype:string,name:investigador;datatype:int,name:tipoInvestigador;datatype:string,name:grupoInvestigacion;datatype:string,name:lineaInvestigacion;datatype:string,name:tarjetaProfesional;datatype:string" />
+</info>
