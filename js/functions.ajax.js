@@ -15,13 +15,14 @@ $(document).ready(function(){
 					url: 'js/log.inout.ajax.php',
 					data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
 					success:function(msj){
+						console.log(msj);
 						if ( msj == 1 ){
+							
 							$('#alertBoxes').html('<div class="box-success"></div>');
 							$('.box-success').hide(0).html('Espera un momento&#133;');
 							$('.box-success').slideDown(timeSlide);
-							setTimeout(function(){
-								window.location.href = ".";
-							},(timeSlide + 500));
+							$('#allContent').html('<div class="session_on">Ya iniciaste sesi&oacute;n &#124; Ahora has un <a href="javascript:void(0);" id="sessionKiller">logout</a>.<span class="timer" id="timer"  style="margin-left: 10px;"></span> </ div>');
+							
 						}
 						else{
 							$('#alertBoxes').html('<div class="box-error"></div>');

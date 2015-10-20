@@ -7,11 +7,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Inicio</title>
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/custom.css">
+  <!--<link rel="stylesheet" href="css/custom.css">-->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/functions.ajax.js"></script>
 </head>
@@ -96,6 +95,7 @@
             <div id="alertBoxes"></div>
             <span class="loginBlock"><span class="inner">
               <?php
+              session_start();
         if ( isset($_SESSION['username']) && isset($_SESSION['userid']) && $_SESSION['username'] != '' && $_SESSION['userid'] != '0' ){
           echo 'se inicio sesion correctamente';
           print($_SESSION['username']);
@@ -140,8 +140,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/translatemypage.xml&up_source_language=es&w=160&h=60&title=&border=&output=js"></script>		
-<script src="js/jquery.min.js"></script>
+<!--<script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/translatemypage.xml&up_source_language=es&w=160&h=60&title=&border=&output=js"></script>		-->
+<!--<script src="js/jquery.min.js"></script>-->
 <script src="js/bootstrap.min.js"></script>		
 </body>
 <!-- InstanceEnd --></html>
