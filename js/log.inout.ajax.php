@@ -3,7 +3,7 @@
 	//print($_SESSION['username']);
 	//print($_SESSION['userid']);
 	
-	if ( isset($_SESSION['username']) && isset($_SESSION['userid']) ){
+	if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
 		
 		if ( @$idcnx = @mysql_connect('localhost','root','') ){
 			

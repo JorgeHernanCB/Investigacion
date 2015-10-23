@@ -12,7 +12,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery2.js"></script>
   <script type="text/javascript" src="js/functions.ajax.js"></script>
 </head>
 
