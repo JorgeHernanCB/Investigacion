@@ -5,15 +5,13 @@
 	<title>Investigación</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
   <title>Inicio</title>
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/cssprincipal.css">
-  
+  <link rel="stylesheet" href="css/cssprincipal.css"> 
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
- 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/functions.ajax.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -38,10 +36,7 @@
        && $_SESSION['userid'] != '0' ){
           echo'
 
-              <ul class="nav navbar-nav">   
-                <li> 
-                  <a href="/PaginaInvestigacion/vista/registro.php">Registrarse</a>
-                </li>  
+              <ul class="nav navbar-nav">  
                 <li> 
                   <a href="/PaginaInvestigacion/vista/consulta.php">Realizar consulta</a>
                 </li>
@@ -705,6 +700,8 @@
          }  
                 ?>
           
+
+
           </div>
           <script src="https://code.jquery.com/jquery.js"></script>
           <script src="js/bootstrap.min.js"></script>
@@ -712,26 +709,20 @@
         </br>
         </br>
 
-    <div class="navbar-inverse pull-center" role="navigation">
-      
-        <div class="container">
-          <div class="navbar-text pull-left">
-              <p>&copy; copyrigth @ 2015</p>
-          </div>
+     <div class="navbar-inverse pull-center" role="navigation">
 
-          <div class="navbar-text pull-right">
-              <a href="https://www.facebook.com" target="_BLANK"><i class="fa fa-facebook-square fa-2x"></i></a>
-              <a href="https://twitter.com" target="_BLANK"><i class="fa fa-twitter fa-2x"></i></a>
-              <a class="fa fa-google-plus fa-2x" href="http://www.google.com.co" target="_BLANK"></a>
-              <a class="fa fa-instagram fa-2x" href="http://www.instagram.com" target="_BLANK"></a>  
-          </div>
-
+      <div class="container">
+        <div class="navbar-text pull-left">
+          <p>&copy; copyrigth @ 2015</p>
         </div>
-      
-  </div>
+        <div class="navbar-text pull-right">
+          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
 
-
- 	
 </body>
 
 
