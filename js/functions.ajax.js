@@ -15,18 +15,17 @@ $(document).ready(function(){
 					url: 'js/log.inout.ajax.php',
 					data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
 					success:function(msj){
-						console.log(msj);
 						if ( msj == 1 ){
-							
-							
-							$('#alertBoxes').html('<div class="box-success"></div>');
+							$('#alertBoxes').html('<div class="box-success btn btn-info""></div>');
 							$('.box-success').hide(0).html('Espera un momento&#133;');
+
 							$('.box-success').slideDown(timeSlide);
-							$('#allContent').html('<div class="session_on">Ya iniciaste sesi&oacute;n &#124; Ahora has un <a href="javascript:void(0);" id="sessionKiller">logout</a>.<span class="timer" id="timer"  style="margin-left: 10px;"></span> </ div>');
-							
+
+							$('.text-center').html('');
+							location.reload();
 						}
 						else{
-							$('#alertBoxes').html('<div class="box-error"></div>');
+							$('#alertBoxes').html('<div class="box-error alert alert-danger"></div>');
 							$('.box-error').hide(0).html('Lo sentimos, pero los datos son incorrectos: ' + msj);
 							$('.box-error').slideDown(timeSlide);
 						}
@@ -34,7 +33,7 @@ $(document).ready(function(){
 					},
 					error:function(){
 						$('#timer').fadeOut(300);
-						$('#alertBoxes').html('<div class="box-error"></div>');
+						$('#alertBoxes').html('<div class="box-error" alert alert-danger></div>');
 						$('.box-error').hide(0).html('Ha ocurrido un error durante la ejecución');
 						$('.box-error').slideDown(timeSlide);
 					}
@@ -42,7 +41,7 @@ $(document).ready(function(){
 				
 			}
 			else{
-				$('#alertBoxes').html('<div class="box-error"></div>');
+				$('#alertBoxes').html('<div class="box-error alert alert-danger"></div>');
 				$('.box-error').hide(0).html('Los campos estan vacios');
 				$('.box-error').slideDown(timeSlide);
 				$('#timer').fadeOut(300);
@@ -57,7 +56,7 @@ $(document).ready(function(){
 	
 	$('#sessionKiller').click(function(){
 		$('#timer').fadeIn(300);
-		$('#alertBoxes').html('<div class="box-success"></div>');
+		$('#alertBoxes').html('<div class="box-success btn btn-info""></div>');
 		$('.box-success').hide(0).html('Espera un momento&#133;');
 		$('.box-success').slideDown(timeSlide);
 		setTimeout(function(){
