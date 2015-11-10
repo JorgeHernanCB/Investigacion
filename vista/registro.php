@@ -74,7 +74,7 @@
 
 <div class="container">
 	<!-- InstanceBeginEditable name="cuerpo" -->
-    <form method="post" name="form1" role="form" action="../controlador/registro.php">
+    <form method="post" name="form1" role="form" action="../controlador/registro.php" id="form-crear-docente" enctype="multipart/form-data">
       <h2>Proceso de registro</h2>
 
       <div class="page-header" id="Inicio">
@@ -205,11 +205,11 @@
                 </div>
 
                  <div class="form-group">
-                <form action='vista/subirArchivo.php' method='POST' enctype="multipart/form-data">
+                <!--<form action='vista/subirArchivo.php' method='POST' enctype="multipart/form-data">-->
                   <label>Foto</label>
-                  <input type="file" class="filestyle" data-input="false" name="Fotografia" value="" size="32" required>
+                  <input type="file" class="filestyle" data-input="false" name="fotografia" id="foto" value="" size="32" required>
 
-                </form>
+                <!--</form>-->
                 </div>
                 </blockquote>
             </div>
@@ -217,7 +217,7 @@
           </div>
 
           <div class="form-group">
-               <input type="submit" class="btn btn-success btn-lg btn-block" value="Insertar registro">
+               <input type="submit" id="enviar_registro" class="btn btn-success btn-lg btn-block" value="Insertar registro">
           </div>
           <input type="hidden" name="MM_insert" value="form1">
 
