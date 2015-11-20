@@ -3,15 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Investigación</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Inicio</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/cssprincipal.css"> 
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/functions.ajax.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+  <script src="lib/libs/jquery/jquery-1.8.2.min.js"></script>
+  <script src="lib/libs/bootstrap/js/bootstrap.min.js"></script>
+
+ 
 </head>
 
 <body>
@@ -102,7 +110,10 @@
          $_SESSION['docenteNombre'] != '' 
          && $_SESSION['docenteApellido'] != '0' ){
 
+      
           require_once("/vista/contenido.php");
+
+
 
            }else{
 

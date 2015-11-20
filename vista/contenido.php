@@ -2,52 +2,50 @@
 
  ?>
  <div class="col-sm-6 col-md-4 text-center">
-            <div class="well well-lg">
-                <section>
-                  
-                            <img class="img-circle"src="adjuntos/imagenes/bat.jpg" alt="Generic placeholder image" width="140" height="140">
-                            <h3><?php echo $_SESSION['docenteApellido'] ?></h3>
-                            <h3><?php echo $_SESSION['docenteNombre']?></h3>
-                            <h3><small>Docente</small></h3>
-                            <span class="glyphicon glyphicon-phone"></span> </br>
-                            <h5><strong>Telefono Celular:</strong><?php echo $_SESSION['telefonoCelular']?></h5>
-                            <h5><strong>Telefono Fijo:</strong><?php echo $_SESSION['telefonoFijo']?></h5>
-                            </br>
-                            <span class="glyphicon glyphicon-envelope"></span>
-                           <h5><strong>Correo:</strong><?php echo $_SESSION['correo']?></h5>
-                  
-                </section>
-            </div> 
-            <button name="submit" href="" id="" class="btn btn-success" data-toggle="modal" data-target="#myModal"> 
-              <span class="glyphicon glyphicon-cog"></span>
-              Actualizar Información 
-            </button>
-           
-          <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+        <div class="well well-lg">
+            <section>
+              
+              <img class="img-circle"src="adjuntos/imagenes/bat.jpg" alt="Generic placeholder image" width="140" height="140">
+              <h3><?php echo $_SESSION['docenteApellido'] ?></h3>
+              <h3><?php echo $_SESSION['docenteNombre']?></h3>
+              <h3><small>Docente</small></h3>
+              <span class="glyphicon glyphicon-phone"></span> </br>
+              <h5><strong>Telefono Celular:</strong><?php echo $_SESSION['telefonoCelular']?></h5>
+              <h5><strong>Telefono Fijo:</strong><?php echo $_SESSION['telefonoFijo']?></h5>
+              </br>
+              <span class="glyphicon glyphicon-envelope"></span>
+             <h5><strong>Correo:</strong><?php echo $_SESSION['correo']?></h5>
+              
+            </section>
+        </div> 
+        <button name="submit" href="" id="" class="btn btn-success" data-toggle="modal" data-target="#myModal"> 
+          <span class="glyphicon glyphicon-cog"></span>
+          Actualizar Información 
+        </button>
+       
+      <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">actualizando Información</h4>
-                    </div>
-                    <div class="modal-body">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">actualizando Información</h4>
+                </div>
+                <div class="modal-body">
 
-                            Hola!!!
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
+                        Hola!!!
 
                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
               </div>
-            <!-- Fin Modal -->
 
             </div>
+        </div><!-- Fin Modal -->  
+</div>
 
            <div class="col-sm-6 col-md-8 text-center">
              <div class="thumbnail">
@@ -58,7 +56,7 @@
 
                           <tr>
                             <td><strong>Fecha de nacimiento:</strong> </td>
-                            <td><h5><?php echo $_SESSION['fechaNacimiento']?></h5></td>
+                            <td><?php echo $_SESSION['fechaNacimiento']?></td>
                             <td><button type="button" class="btn btn-link">Editar</button></td>
                           </tr>
                           <tr>
@@ -120,7 +118,7 @@
                       </table>
                   </div>
               </div>
-            </div>
+           </div>
            
 
             <ul class="nav nav-pills nav-justified" role="tablist">
@@ -141,54 +139,53 @@
 
               <div role="tabpanel" class="tab-pane in active" id="seccion1">
                   <h3>Información Institucional</h3>   
-
+                  <?php if(isset($_SESSION['nombreInstitucion'] ) &&  isset($_SESSION['direccionInstitucion'])){?>
                   <table class="table table-hover thumbnail">
                       <tr>
-                       <td><strong>Nombre de la institución:</strong> </td><td><h5><?php echo $_SESSION['nombreInstitucion']?></h5></td>
+                       <td><strong>Nombre de la institución:</strong> </td><td><?php echo $_SESSION['nombreInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Dirección:</strong> </td><td><h5><?php echo $_SESSION['direccionInstitucion']?></h5></td>
+                       <td><strong>Dirección:</strong> </td><td><?php echo $_SESSION['direccionInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Barrio:</strong> </td><td><h5><?php echo $_SESSION['barrioInstitucion']?></h5></td>
+                       <td><strong>Barrio:</strong> </td><td><?php echo $_SESSION['barrioInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Municipio:</strong> </td><td><h5><?php echo $_SESSION['municipioInstitucion']?></h5></td>
+                       <td><strong>Municipio:</strong> </td><td><?php echo $_SESSION['municipioInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Telefono:</strong> </td><td><h5><?php echo $_SESSION['telefonoInstitucion']?></h5></td>
+                       <td><strong>Telefono:</strong> </td><td><?php echo $_SESSION['telefonoInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Correo:</strong> </td><td><h5><?php echo $_SESSION['correoInstitucion']?></h5></td>
+                       <td><strong>Correo:</strong> </td><td><?php echo $_SESSION['correoInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Categoria:</strong> </td><td><h5><?php echo $_SESSION['categoriaInstitucion']?></h5></td>
+                       <td><strong>Categoria:</strong> </td><td><?php echo $_SESSION['categoriaInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Fecha de Categorizacion:</strong> </td><td><h5><?php echo $_SESSION['fechaCategorizacionInstitucion']?></h5></td>
+                       <td><strong>Fecha de Categorizacion:</strong> </td><td><?php echo $_SESSION['fechaCategorizacionInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Vinculación:</strong> </td><td><h5><?php echo $_SESSION['vinculacionInstitucion']?></h5></td>
+                       <td><strong>Vinculación:</strong> </td><td><?php echo $_SESSION['vinculacionInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Dedicación:</strong> </td><td><h5><?php echo $_SESSION['dedicacionInstitucion']?></h5></td>
+                       <td><strong>Dedicación:</strong> </td><td><?php echo $_SESSION['dedicacionInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Actividades:</strong> </td><td><h5><?php echo $_SESSION['actividadesInstitucion']?></h5></td>
+                       <td><strong>Actividades:</strong> </td><td><?php echo $_SESSION['actividadesInstitucion']?></td>
                       </tr>
                       <tr>
-                       <td><strong>Servicio:</strong> </td><td><h5><?php echo $_SESSION['servicioInstitucion']?></h5></td>
+                       <td><strong>Servicio:</strong> </td><td><?php echo $_SESSION['servicioInstitucion']?></td>
                       </tr>
-                     
                   </table>  
-
+                  <?php }else{ echo "<h2> no hay información institucional registrada!!! </h2> </br> </br>"; } ?>
                   <button name="submit" href="" id="" class="btn btn-info"> Actualizar Información </button>
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion2">
                 <h3>Información Academica</h3>   
-
+                <?php if(isset($_SESSION['tipo'] ) &&  isset($_SESSION['titulo'])){?>
                 <table class="table table-hover thumbnail">
                     <tr>
                      <td><strong>Tipo:</strong> </td><td><h5><?php echo $_SESSION['tipo']?></h5></td>
@@ -209,14 +206,15 @@
                      <td><strong>Diploma:</strong> </td><td><h5><?php echo $_SESSION['diploma']?></h5></td>
                     </tr>
                 </table> 
-
+                <?php }else{ echo "<h2> no hay información academica registrada!!! </h2> </br> </br>"; } ?>
                 <button name="submit" href="" id="" class="btn btn-info"> Actualizar Información </button>
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion3">
-                <h3>Otros estudios</h3>   
 
+                <h3>Otros estudios</h3>   
+                 <?php if(isset($_SESSION['tipoCursoOE'] ) &&  isset($_SESSION['evidenciaCursoOE'])){?>
                   <table class="table table-hover thumbnail">
                       <tr>
                        <td><strong>Tipo de curso/Diplomado:</strong> </td><td><h5><?php echo $_SESSION['tipoCursoOE']?></h5></td>
@@ -243,7 +241,7 @@
                        <td><strong>Tipo de participación:</strong> </td><td><h5><?php echo $_SESSION['tipoPArticipacionOE']?></h5></td>
                       </tr>               
                   </table>  
-
+                  <?php }else{ echo "<h2> no hay estudios registrados!!! </h2> </br> </br>"; } ?>
                   <button name="submit" href="" id="" class="btn btn-info"  data-toggle="modal" data-target="#agregarCurso"> Agregar mas estudios </button>
 
                   <!-- Modal -->
@@ -257,50 +255,51 @@
                                 <h4 class="modal-title"><Strong>Agregar estudio</strong></h4>
                               </div>
                               <div class="modal-body">
-
-                                      <table class="table table-hover thumbnail">
+                                <form method="post" name="form1" role="form" action="../controlador/registrarEstudio.php" id="form-crear-docente" enctype="multipart/form-data">
+                                    <table class="table table-hover thumbnail">
                                         <tr>
                                          <td>Tipo de curso/Diplomado: </td><td> 
-                                          <input type="text" class="form-control" id="" placeholder="ingrese el tipo" required>
-                                        </td>
+                                          <input type="text" name="tipoCurso" class="form-control" id="" placeholder="ingrese el tipo" required>
+                                         </td>
                                         </tr>
                                         <tr>
-                                         <td>Evidencia del curso/Diplomado: </td><td><input type="text" class="form-control" id="" placeholder="ingrese la evidencia" required></td>
+                                         <td>Evidencia del curso/Diplomado: </td><td> <input type="file" name="evidenciaCurso" class="filestyle" data-input="false" name="evidencia-curso" id="evidencia-curso" value="" size="32" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Nombre del curso/Diplomado: </td><td><input type="text" class="form-control" id="" placeholder="ingrese el nombre" required></td>
+                                         <td>Nombre del curso/Diplomado: </td><td><input type="text" name="nombreCurso" class="form-control" id="" placeholder="ingrese el nombre" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Institución: </td><td><input type="text" class="form-control" id="" placeholder="ingrese la institucion" required></td>
+                                         <td>Institución: </td><td><input type="text" name="institucion" class="form-control" id="" placeholder="ingrese la institucion" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Lugar: </td><td><input type="text" class="form-control" id="" placeholder="ingrese el lugar" required></td>
+                                         <td>Lugar: </td><td><input type="text" name="lugar" class="form-control" id="" placeholder="ingrese el lugar" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Año:</td><td><input type="text" class="form-control" id="" placeholder="ingrese el año" required></td>
+                                         <td>Año:</td><td><input type="text" name="ano" class="form-control" id="" placeholder="ingrese el año" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Semestre:</td><td><input type="text" class="form-control" id="" placeholder="ingrese el semestre" required></td>
+                                         <td>Semestre:</td><td><input type="text" name="semestre" class="form-control" id="" placeholder="ingrese el semestre" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Tipo de participación: </td><td><input type="text" class="form-control" id="" placeholder="ingrese el tipo" required></td>
+                                         <td>Tipo de participación: </td><td><input type="text" name="tipoParticipación" class="form-control" id="" placeholder="ingrese el tipo" required></td>
                                         </tr>               
                                     </table>  
+                                
+                                    </div><!-- Fin modal body -->
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Agregar</button>
+                                    </div>
+                                  </form>
+                            </div><!-- Fin Modal content -->
 
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Agregar</button>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
+                          </div><!-- Fin class="modal-content" -->
+                      </div><!-- Fin modal -->
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion4">
                 <h3>Experiencia Académica</h3>   
-
+                <?php if(isset($_SESSION['institucionAcademicaEA'] ) &&  isset($_SESSION['cargoEA'])){?>
                   <table class="table table-hover thumbnail">
                       <tr>
                        <td><strong>Institución Académica:</strong> </td><td><h5><?php echo $_SESSION['institucionAcademicaEA']?></h5></td>
@@ -324,7 +323,7 @@
                        <td><strong>área:</strong> </td><td><h5><?php echo $_SESSION['areaEA']?></h5></td>
                       </tr>
                   </table> 
-
+                  <?php }else{ echo "<h2> no hay experiencia registrados!!! </h2> </br> </br>"; } ?>
                   <button name="submit" href="" id="" class="btn btn-info" data-toggle="modal" data-target="#agregarExpAcademica"> Agregar experiencia </button>
 
                   <!-- Modal -->
@@ -376,7 +375,7 @@
 
               <div role="tabpanel" class="tab-pane" id="seccion5">
                       <h3>Experiencia Laboral</h3>   
-
+                      <?php if(isset($_SESSION['institucionEL'] ) &&  isset($_SESSION['tipoLaborEL'])){?>
                       <table class="table table-hover thumbnail">
                           <tr>
                            <td><strong>Institución:</strong> </td><td><h5><?php echo $_SESSION['institucionEL']?></h5></td>
@@ -400,16 +399,16 @@
                            <td><strong>Evidencia:</strong> </td><td><h5><?php echo $_SESSION['evidenciaEL']?></h5></td>
                           </tr>
                       </table>      
-
+                      <?php }else{ echo "<h2> no hay experiencia registrados!!! </h2> </br> </br>"; } ?>
                       <button name="submit" href="" id="" class="btn btn-info"> Agregar experiencia </button>
 
-                </div>  
+              </div>  
              
 
               <div role="tabpanel" class="tab-pane" id="seccion6">
 
                       <h3>Actividades Academicas</h3>   
-
+                      <?php if(isset($_SESSION['consejoAC'] ) &&  isset($_SESSION['comiteAC'])){?>
                       <table class="table table-hover thumbnail">
                           <tr>
                            <td><strong>Consejo:</strong> </td><td><h5><?php echo $_SESSION['consejoAC']?></h5></td>
@@ -430,41 +429,41 @@
                            <td><strong>Laboratorio:</strong> </td><td><h5><?php echo $_SESSION['laboratoriosAC']?></h5></td>
                           </tr>
                       </table>  
-
+                      <?php }else{ echo "<h2> no hay Actividades academicas registradas!!! </h2> </br> </br>"; } ?>
                       <button name="submit" href="" id="" class="btn btn-info"> Agregar actividad </button>
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion7">
 
-                      <h3>Proyectos de investigación</h3>   
-
-                      <table class="table table-hover thumbnail">
-                          <tr>
-                           <td><strong>Título:</strong> </td><td><h5><?php echo $_SESSION['tituloPI']?></h5></td>
-                          </tr>
-                          <tr>
-                           <td><strong>Fecha de inicio:</strong> </td><td><h5><?php echo $_SESSION['fechaInicioPI']?></h5></td>
-                          </tr>
-                          <tr>
-                           <td><strong>Duración:</strong> </td><td><h5><?php echo $_SESSION['duracionPI']?></h5></td>
-                          </tr>
-                          <tr>
-                           <td><strong>Estado:</strong> </td><td><h5><?php echo $_SESSION['estadoPI']?></h5></td>
-                          </tr>
-                          <tr>
-                           <td><strong>Resumen:</strong> </td><td><h5><?php echo $_SESSION['resumenPI']?></h5></td>
-                          </tr>
-                      </table>     
-
-                      <button name="submit" href="" id="" class="btn btn-info"> Agregar Proyecto </button>
+                    <h3>Proyectos de investigación</h3>   
+                    <?php if(isset($_SESSION['tituloPI'] ) &&  isset($_SESSION['fechaInicioPI'])){?>
+                    <table class="table table-hover thumbnail">
+                        <tr>
+                         <td><strong>Título:</strong> </td><td><h5><?php echo $_SESSION['tituloPI']?></h5></td>
+                        </tr>
+                        <tr>
+                         <td><strong>Fecha de inicio:</strong> </td><td><h5><?php echo $_SESSION['fechaInicioPI']?></h5></td>
+                        </tr>
+                        <tr>
+                         <td><strong>Duración:</strong> </td><td><h5><?php echo $_SESSION['duracionPI']?></h5></td>
+                        </tr>
+                        <tr>
+                         <td><strong>Estado:</strong> </td><td><h5><?php echo $_SESSION['estadoPI']?></h5></td>
+                        </tr>
+                        <tr>
+                         <td><strong>Resumen:</strong> </td><td><h5><?php echo $_SESSION['resumenPI']?></h5></td>
+                        </tr>
+                    </table>     
+                    <?php }else{ echo "<h2> no hay proyectos de investigación registrados!!! </h2> </br> </br>"; } ?>
+                    <button name="submit" href="" id="" class="btn btn-info"> Agregar Proyecto </button>
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion8">
 
                        <h3>Trabajos Dirijidos</h3>   
-
+                       <?php if(isset($_SESSION['tituloTrabajoTD'] ) &&  isset($_SESSION['nivelFormacionTD'])){?>
                         <table class="table table-hover thumbnail">
                             <tr>
                              <td><strong>Título:</strong> </td><td><h5><?php echo $_SESSION['tituloTrabajoTD']?></h5></td>
@@ -485,7 +484,7 @@
                              <td><strong>Acta de evaluación:</strong> </td><td><h5><?php echo $_SESSION['actaEvaluacionTD']?></h5></td>
                             </tr>
                         </table> 
-
+                        <?php }else{ echo "<h2> no hay trabajos dirijidos registrados!!! </h2> </br> </br>"; } ?>
                         <button name="submit" href="" id="" class="btn btn-info"> Agregar Trabajo </button>
 
               </div>
@@ -493,7 +492,7 @@
               <div role="tabpanel" class="tab-pane" id="seccion9">
 
                       <h3>Publicaciones</h3>   
-
+                      <?php if(isset($_SESSION['tipoPublicacionP'] ) &&  isset($_SESSION['tituloP'])){?>
                         <table class="table table-hover thumbnail">
                             <tr>
                              <td><strong>Tipo de la publicación:</strong> </td><td><h5><?php echo $_SESSION['tipoPublicacionP']?></h5></td>
@@ -550,14 +549,14 @@
                              <td><strong>Evidencia del Software:</strong> </td><td><h5><?php echo $_SESSION['evidenciaSoftwareP']?></h5></td>
                             </tr>
                         </table>   
-
+                        <?php }else{ echo "<h2> no hay publicaciones registradas!!! </h2> </br> </br>"; } ?>
                         <button name="submit" href="" id="" class="btn btn-info"> Agregar publicación </button>
 
               </div>
 
               <div role="tabpanel" class="tab-pane" id="seccion10">
                       <h3>Eventos cientificos</h3>   
-
+                      <?php if(isset($_SESSION['tituloTrabajoTD'] ) &&  isset($_SESSION['nivelFormacionTD'])){?>
                     <table class="table table-hover thumbnail">
                         <tr>
                          <td><strong>Nombre:</strong> </td><td><h5><?php echo $_SESSION['tituloTrabajoTD']?></h5></td>
@@ -581,8 +580,12 @@
                          <td><strong>Evidencia del evento:</strong> </td><td><h5><?php echo $_SESSION['actaEvaluacionTD']?></h5></td>
                         </tr>
                     </table>  
-
+                    <?php }else{ echo "<h2> no hay eventos cientificos registradas!!! </h2> </br> </br>"; } ?>
                     <button name="submit" href="" id="" class="btn btn-info"> Agregar Evento</button>
 
               </div>
+            </div>
+          
+
+
 

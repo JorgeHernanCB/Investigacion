@@ -48,18 +48,21 @@ if (isset($_SERVER['QUERY_STRING'])) {
   else
   { 
     session_start();
+    
     $ruta="../adjuntos/imagenes/";
     //Pregunto si no tiene extensiones invalidas, entra si hay un error
     if(!preg_match("/.jpg$|.png$|.jpeg$/i", $foto['name'])) 
     {
       //poner mensaje
+      echo "La expencion del archivo no es valida";
     }
     // pregunto por el tamaño del la foto, 12582912 equivale a 3MB
     if($foto['size'] > 12582912) {
       // colocar mensaje
+      echo "El tamaño del archivo es mayor de 3MB, por favor seleecione un archivo que pese menos de 3MB";
     }
-    //$nombreArchivo= $_SESSION['docenteNombre'];
-    $nombreArchivo= "andres pepito";
+    $nombreArchivo= $_POST['cedulaDocente'];
+    //$nombreArchivo= "jorge hernan";
     $extension= end(explode(".", $foto['name']));
 
     //mkdir('../adjuntos/imagenes',0777,TRUE);
@@ -94,16 +97,17 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
     mysql_select_db($database_conexion_BDinvestigacion, $conexion_BDinvestigacion);
     $Result1 = mysql_query($insertSQL, $conexion_BDinvestigacion) or die(mysql_error());
+
   }
 
 
 
 
-    download_file($rutaCompleta);
+    //download_file($rutaCompleta);
 
     }// cierro else de la foto
   
-/**
+    /**
      * Función que permite descargar un archivo
      * @param  String $archivo          Ruta del archivo a descargar.
      * @param  (null|String) $downloadfilename El nombre que se quiere usar para descargar el archivo, si no se especifica se usa el nombre actual del archivo.

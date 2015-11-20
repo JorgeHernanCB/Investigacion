@@ -181,22 +181,22 @@
 
                 <div class="form-group">
                 <label>Es usted un investigador</label>
-                  <input type="checkbox" name="investigador" value="" required>
+                  <input type="checkbox" name="investigador" value="">
                 </div>
 
                 <div class="form-group">
                 <label>Tipo de investigador</label>
-                  <input type="text" class="form-control" placeholder="Introdusca que tipo de investigador és" name="tipoInvestigador" value="" size="32" required>
+                  <input type="text" class="form-control" placeholder="Introdusca que tipo de investigador és" name="tipoInvestigador" value="" size="32">
                 </div>
 
                 <div class="form-group">
                 <label>Grupo de investigacion</label>
-                  <input type="text" class="form-control" placeholder="Introdusca su grupo de investigacion" name="grupoInvestigacion" value="" size="32" required>
+                  <input type="text" class="form-control" placeholder="Introdusca su grupo de investigacion" name="grupoInvestigacion" value="" size="32">
                 </div>
 
                 <div class="form-group">
                 <label>Linea de investigacion</label>
-                  <input type="text" class="form-control" placeholder="Introdusca su linea de investigacion"  name="lineaInvestigacion" value="" size="32" required>
+                  <input type="text" class="form-control" placeholder="Introdusca su linea de investigacion"  name="lineaInvestigacion" value="" size="32">
                 </div>
 
                 <div class="form-group">
@@ -205,11 +205,11 @@
                 </div>
 
                  <div class="form-group">
-                <!--<form action='vista/subirArchivo.php' method='POST' enctype="multipart/form-data">-->
+                
                   <label>Foto</label>
                   <input type="file" class="filestyle" data-input="false" name="fotografia" id="foto" value="" size="32" required>
 
-                <!--</form>-->
+                
                 </div>
                 </blockquote>
             </div>

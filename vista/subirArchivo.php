@@ -13,10 +13,12 @@
 		//Pregunto si no tiene extensiones invalidas, entra si hay un error
 		if(!preg_match("/.jpg$|.png$|.jpeg$/i", $foto['name'])) {
 			//poner mensaje
+			echo "La expencion del archivo no es valida";
 		{
 		// pregunto por el tamaño del la foto, 12582912 equivale a 3MB
 		if($foto['size'] > 12582912) {
 			// colocar mensaje
+			echo "El tamaño del archivo es mayor de 3MB, por favor seleecione un archivo que pese menos de 3MB";
 		}
 		$nombreArchivo= $_SESSION['docenteNombre'];
 		//mkdir('../adjuntos/imagenes',0777,TRUE);

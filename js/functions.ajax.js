@@ -63,15 +63,6 @@ $(document).ready(function(){
 			window.location.href = "controlador/logout.php";
 		},2500);
 	});
-
-	/*
-	$('#enviar_registro').click(function(){
-		var datos = new FormData();
-		var foto = document.getElementById("fotografia");
-		var nombre = ;
-
-
-	});
-	*/
+   
 	
 });
