@@ -1,80 +1,71 @@
 <?php 
-require_once('../Connections/conexion_BDinvestigacion.php'); 
-
-    if (isset($_POST['tipoCurso'])) {
-     //Código de validación de datos
-      echo "<label>".'$_POST['tipoCurso']'"</label>";
-    }
-    else
-      {echo "no llego!!!";}
-
-  $foto=$_FILES['evidencia-curso'];
-  // pregunta si hay error, si lo hay entra.
-  if ($foto["error"] != 0){
-    echo "Error: " . $_FILES['archivo']['error'] . "<br>";
-  }
-  // aquí sé que no existen errores.
-  else
-  { 
-    session_start();
-    print($_SESSION['userid']);
-    $ruta="../adjuntos/documentos/";
-    //Pregunto si no tiene extensiones invalidas, entra si hay un error
-    if(!preg_match("/.pdf$|.word$|.docx$/i", $foto['name'])) 
-    {
-      //poner mensaje
-      echo "La expencion del archivo no es valida";
-    }
-    // pregunto por el tamaño del la foto, 12582912 equivale a 3MB
-    if($foto['size'] > 12582912) {
-      // colocar mensaje
-      echo "El tamaño del archivo es mayor de 3MB, por favor seleecione un archivo que pese menos de 3MB";
-    }
-    //$nombreArchivo= $_POST['cedulaDocente'];
-    $nombreArchivo= "jorge hernan";
-    $extension= end(explode(".", $foto['name']));
-
-    //mkdir('../adjuntos/imagenes',0777,TRUE);
-    $rutaCompleta = $ruta.$nombreArchivo.".".$extension;
-    
-
-    move_uploaded_file($foto['tmp_name'],$rutaCompleta);
-
-    //Ejecucion de la sentencia SQL
-    mysql_query("INSERT INTO otrosestudios (codigoOtrosEstudios,tipoCurso,evidenciaCurso,nombre,institucion,lugar,ano,semestre,tipoParticipacion,codigoDocente) VALUES (NULL, ".$_POST['tipoCurso'].", ".$rutaCompleta.", ".$_POST['nombreCurso'].", ".$_POST['institucion'].", ".$_POST['lugar'].", ".$_POST['ano'].", ".$_POST['semestre'].", ".$_POST['tipoParticipación'].", ".$_SESSION['userid'].")");
-
-
-    //download_file($rutaCompleta);
-
-    }// cierro else de la foto
+require_once("../Connections/ConnectionBD.php");
   
-    /**
-     * Función que permite descargar un archivo
-     * @param  String $archivo          Ruta del archivo a descargar.
-     * @param  (null|String) $downloadfilename El nombre que se quiere usar para descargar el archivo, si no se especifica se usa el nombre actual del archivo.
-     * @return File Stream                   La descarga del archivo
-     */
-    function download_file($archivo, $downloadfilename = null) {
-        if (file_exists($archivo)) {
-            $downloadfilename = $downloadfilename !== null ? $downloadfilename : basename($archivo);
-            header('Content-Description: File Transfer');
-            // generico
-            header ("Content-Type: application/octet-stream");
-            // para pdf
-            //header("Content-Type: application/pdf"); 
-            //header("Content-Type: image/jpeg");
-            //header("Content-Type: image/png");
-            header('Content-Disposition: attachment; filename="'.$downloadfilename.'"'); 
-            header('Content-Transfer-Encoding: binary');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-            header('Pragma: public');
-            header('Content-Length: ' . filesize($archivo));
-            //ob_clean();
-            flush();
-            readfile($archivo);
-            exit;
-        }
-    }
+  // Verifico que venga el archivo y los datos.
+  if (isset($_FILES, $_POST) && sizeof($_FILES) > 0 && $_FILES['evidencia-curso']['error'] == 0 && sizeof($_POST) > 0) {
+      session_start();     
+      $diploma=$_FILES['evidencia-curso'];
+      $tipoCurso = htmlspecialchars($_POST['tipo-curso']);
+      $nombreCurso = htmlspecialchars($_POST['nombre-curso']);
+      $institucion = htmlspecialchars($_POST['institucion']);
+      $lugar = htmlspecialchars($_POST['lugar']);
+      $ano = htmlspecialchars($_POST['ano']);
+      $semestre = htmlspecialchars($_POST['semestre']);
+      $tipoParticipacion = htmlspecialchars($_POST['tipo-participacion']);
+
+      //Pregunto si no tiene extensiones invalidas, entra si hay un error
+      if(!preg_match("/.pdf$/i", $diploma['name'])){
+        //poner mensaje 
+        $mensaje['mensaje'] = "La extensión del archivo no es valida";
+        echo json_encode($mensaje);
+      }
+      // pregunto por el tamaño del la diploma, 3145728 equivale a 3MB
+      else if($diploma['size'] > 3145728) {
+        // colocar mensaje
+        $mensaje['mensaje'] = "El tamaño del archivo es mayor de 3MB, por favor seleecione un archivo que pese menos de 3MB";
+        echo json_encode($mensaje);
+      }
+      else{
+          $ruta="../adjuntos/documentos/";
+          $cedulaDocente= $_SESSION['cedulaDocente'];
+          $nombreArchivo = $diploma['name'];
+          $extension = explode(".", $nombreArchivo);
+          $extension = end($extension);
+          //Quedará del tipo '../adjuntos/documentos/1110000_diploma.pdf'
+          $rutaCompleta = $ruta.$cedulaDocente."_diploma_".$nombreCurso.".".$extension;
+          if(move_uploaded_file($diploma['tmp_name'],$rutaCompleta)){
+            $ConnectionBD = new ConnectionBD();
+            $sql = "INSERT INTO otrosestudios 
+                  (tipoCurso,evidenciaCurso,nombre,institucion,lugar,ano,semestre,tipoParticipacion,codigoDocente) 
+                  VALUES ( :tipoCurso, :rutaCompleta, :nombreCurso, :institucion, :lugar, :ano, :semestre, :tipoParticipacion, :cedulaDocente )";
+            $consultaPreparada = $ConnectionBD->query_prepare($sql);
+            $consultaPreparada->bindParam(":tipoCurso", $tipoCurso);
+            $consultaPreparada->bindParam(":rutaCompleta", $rutaCompleta);
+            $consultaPreparada->bindParam(":nombreCurso", $nombreCurso);
+            $consultaPreparada->bindParam(":institucion", $institucion);
+            $consultaPreparada->bindParam(":lugar", $lugar);
+            $consultaPreparada->bindParam(":ano", $ano);
+            $consultaPreparada->bindParam(":semestre", $semestre);
+            $consultaPreparada->bindParam(":tipoParticipacion", $tipoParticipacion);
+            $consultaPreparada->bindParam(":cedulaDocente", $cedulaDocente);
+            $consultaPreparada->execute();
+            $error = $consultaPreparada->errorInfo();
+            if($error[0] == 00000){
+              $mensaje['mensaje'] = "Se ha ingresado el estudio exitosamente.";
+              echo json_encode($mensaje);
+            }
+            else{
+              $mensaje['mensaje'] = "Ha ocurrido un error inesperado, porfavor inténtelo de nuevo.";
+              echo json_encode($mensaje);
+            }
+          }
+      }
+  }
+  else
+  {
+    // error
+    $mensaje['mensaje'] = "Ha ocurrido un error inesperado.";
+    echo json_encode($mensaje);
+  }
 
 ?>

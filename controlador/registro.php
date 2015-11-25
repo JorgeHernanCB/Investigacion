@@ -105,7 +105,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
     //download_file($rutaCompleta);
 
-    }// cierro else de la foto
+}// cierro else de la foto
   
     /**
      * Función que permite descargar un archivo

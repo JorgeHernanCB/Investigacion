@@ -22,13 +22,13 @@
         <span class="icon-bar"></span>
         </button>
 
-        <a href="/PaginaInvestigacion" class="navbar-brand">INVESTIGACIÓN</a>
+        <a href="/" class="navbar-brand">INVESTIGACIÓN</a>
 		</div><!--End navbar header-->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
     
         <ul class="nav navbar-nav">
           <li> 
-              <a href="/PaginaInvestigacion/vista/consulta.php">Realizar consulta</a>
+              <a href="consulta.php">Realizar consulta</a>
           </li>
         </ul>  
         
@@ -75,12 +75,11 @@
 <div class="container">
 	<!-- InstanceBeginEditable name="cuerpo" -->
     <form method="post" name="form1" role="form" action="../controlador/registro.php" id="form-crear-docente" enctype="multipart/form-data">
-      <h2>Proceso de registro</h2>
-
+      
       <div class="page-header" id="Inicio">
         <div class="row">
 
-
+          <!-- Primer bloque -->
           <div class="col-lg-4">
             <blockquote>
 
@@ -127,18 +126,20 @@
                   <option value="Union libre" >Union libre</option>
                 </select>
             </div>
-            </blockquote>
 
-          </div>
-
-          <div class="col-lg-4">
-            <blockquote>
-            
             <div class="form-group">
               <label>Numero de hijos</label>
                 <input type="text" class="form-control" placeholder="Introdusca el numero de hijos" name="numeroHijos" value="" size="32" required>
             </div>
 
+            </blockquote>
+
+          </div><!-- FIN Primer bloque -->
+
+          <!-- Segundo bloque -->
+          <div class="col-lg-4">
+            <blockquote>
+            
               <div class="form-group">
               <label>Facultad</label>
                 <input type="text" class="form-control" placeholder="Introdusca la facultad a la que pertenece" name="facultad" value="" size="32" required>
@@ -168,13 +169,8 @@
                 <label>Telfono celular</label>
                   <input type="text" class="form-control" placeholder="Introdusca su telefono celular" name="telefonoCelular" value="" size="32" required>
                 </div>
-                </blockquote>
-             </div>
 
-            <div class="col-lg-4">
-              <blockquote>
-
-                 <div class="form-group">
+                <div class="form-group">
                 <label>Correo personal</label>
                   <input type="text" class="form-control" placeholder="Introdusca su correo personal" name="correo" value="" size="32" required>
                 </div>
@@ -184,6 +180,12 @@
                   <input type="checkbox" name="investigador" value="">
                 </div>
 
+                </blockquote>
+             </div><!-- FIN Segundo bloque -->
+
+             <!-- Tercer bloque -->
+            <div class="col-lg-4">
+              <blockquote>
                 <div class="form-group">
                 <label>Tipo de investigador</label>
                   <input type="text" class="form-control" placeholder="Introdusca que tipo de investigador és" name="tipoInvestigador" value="" size="32">
@@ -206,15 +208,25 @@
 
                  <div class="form-group">
                 
-                  <label>Foto</label>
+                <label>Foto</label>
                   <input type="file" class="filestyle" data-input="false" name="fotografia" id="foto" value="" size="32" required>
-
-                
                 </div>
-                </blockquote>
-            </div>
 
-          </div>
+                <div class="form-group">
+                <label>Username</label>
+                  <input type="text" class="form-control" placeholder="Introdusca su username" name="username" value="" size="32" required>
+                </div>
+
+                <div class="form-group">
+                <label>Password</label>
+                  <input type="text" class="form-control" placeholder="Introdusca su contraseña" name="password" value="" size="32" required>
+                </div>
+
+               
+                </blockquote>
+            </div><!-- FIN Tercer bloque -->
+
+          </div><!-- FIN de la clase row -->
 
           <div class="form-group">
                <input type="submit" id="enviar_registro" class="btn btn-success btn-lg btn-block" value="Insertar registro">
@@ -242,14 +254,14 @@
 
      
 
-    </div> <!-- /container -->
+</div> <!-- /container -->
 
 <!-- End Prueba-->
 
 	</div><!--End Container-->
+
 	 </br>
 	 </br>
 
-		
 </body>
 <!-- InstanceEnd --></html>

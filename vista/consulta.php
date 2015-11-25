@@ -3,15 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Investigación</title>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Inicio</title>
-  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="../css/cssprincipal.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../css/cssprincipal.css"> 
+  
   <script type="text/javascript" src="../js/jquery.js"></script>
   <script type="text/javascript" src="../js/functions.ajax.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 
+  <script src="../lib/libs/jquery/jquery-1.8.2.min.js"></script>
+  <script src="../lib/libs/bootstrap/js/bootstrap.min.js"></script>
+ 
 </head>
 
 <body>
@@ -96,54 +102,18 @@
 
 
 
-   <?php
+  <?php
             
       if ( isset($_SESSION['docenteNombre']) && 
         isset($_SESSION['docenteApellido']) &&
          $_SESSION['docenteNombre'] != '' 
          && $_SESSION['docenteApellido'] != '0' ){
 
-        echo'
-       <blockquote>
-              <p>Seleccione una de las siguientes opciones</p>
-              <small>Para poder filtrar la información a buscar</small>
-        </blockquote>
+      
+          require_once("../controlador/busqueda.php");
 
-        <div class="container text-center">
 
-            <ul class="nav nav-pills nav-justified" role="tablist">
-              <li role="presentation" class="active"><a href="#seccion1" aria-controls="seccion1" data-toggle="tab">Doncentes</a></li>
-              <li role="presentation"><a href="#seccion2" aria-controls="seccion2" data-toggle="tab">Eventos Cientificos</a></li>
-              <li role="presentation"><a href="#seccion3" aria-controls="seccion3" data-toggle="tab">Publicaciones</a></li>
-              <li role="presentation"><a href="#seccion4" aria-controls="seccion4" data-toggle="tab">Proyectos</a></li>
-              <li role="presentation"><a href="#seccion5" aria-controls="seccion5" data-toggle="tab">Trabajos dirijidos</a></li>
-              <li role="presentation"><a href="#seccion6" aria-controls="seccion6" data-toggle="tab">Actividades</a></li>
-            </ul>
-            </br>
 
-            <div class="well ">
-
-              <form role="form" method="get">
-            
-                <div class="form-group">
-                  <label><h1>Consulta</h1></label>
-
-                  <div class="input-group input-group-lg"> 
-                    <input type="text" class="form-control" placeholder="Introdusca la consulta" aria-describedby="sizing-addon1">
-                    <span class="input-group-addon" id="sizing-addon1">
-                    <span class="glyphicon glyphicon-search"></span></span>
-                  </div>
-
-                </div>
-                  </br>
-                  <button type="submit" class="btn btn-success">Buscar</button>
-                  
-              </form>
-
-            </div>
-
-           
-            ';
            }else{
 
           echo '

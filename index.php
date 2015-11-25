@@ -1,24 +1,24 @@
 <!DOCTYPE html PUBLIC>
-<html lang="es"><!-- InstanceBegin template="/Templates/plantilla1.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<html lang="es"><!-- IDIOMA ESPAÑOL -->
 <head>
 	<meta charset="UTF-8">
 	<title>Investigación</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <!-- Línea para activar el responsive en los dispositvos móviles, es de vital importancia -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- bootstrap -->
+  <!-- Bootstrap CSS Local-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <!-- CSS Estilos personales -->
   <link rel="stylesheet" href="css/cssprincipal.css"> 
-  
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/functions.ajax.js"></script>
+  <!-- Font Awesome CSS remoto -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
- 
-  <script src="lib/libs/jquery/jquery-1.8.2.min.js"></script>
-  <script src="lib/libs/bootstrap/js/bootstrap.min.js"></script>
 
+  <!-- X-editable CSS Local, js al final de la página-->
+  <link href="lib/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
  
 </head>
 
@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
         </button>
 
-        <a href="" class="navbar-brand">INVESTIGACIÓN</a>
+        <a href="/" class="navbar-brand">INVESTIGACIÓN</a>
 		</div><!--End navbar header-->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
     <?php
@@ -46,12 +46,12 @@
 
               <ul class="nav navbar-nav">  
                 <li> 
-                  <a href="/PaginaInvestigacion/vista/consulta.php">Realizar consulta</a>
+                  <a href="vista/consulta.php">Realizar consulta</a>
                 </li>
               </ul>    
 
               <div class="session_on navbar-right"> 
-                  <span class="glyphicon glyphicon-user"></span>
+                  <span class="glyphicon glyphicon-user white"></span>
                   <span class="label"> Bienvenido  '.$_SESSION['username'] .' </span>
                   <button name="submit" href="javascript:void(0);" id="sessionKiller" class="btn btn-primary btn-lg">
                     Logout
@@ -62,7 +62,7 @@
       echo'
         <ul class="nav navbar-nav">
           
-          <li> <a href="/PaginaInvestigacion/vista/registro.php">Registrarse</a></li>
+          <li> <a href="vista/registro.php">Registrarse</a></li>
           
         </ul> 
 
@@ -111,7 +111,7 @@
          && $_SESSION['docenteApellido'] != '0' ){
 
       
-          require_once("/vista/contenido.php");
+          require_once("vista/contenido.php");
 
 
 
@@ -119,16 +119,21 @@
 
           echo '
             <div class="text-center">
-              <h2>Pagina en construcción</h2>
+              <img src="imagenes/construccion.jpg">
            </div>'; 
          }  
                 ?>
-          
-
-
           </div>
-          <script src="https://code.jquery.com/jquery.js"></script>
+          <!-- JQuery  local-->
+          <script src="js/jquery.js"></script>
+          <!-- Bootstrap local -->
           <script src="js/bootstrap.min.js"></script>
+          <!-- X-Editable JS local-->
+          <script src="lib/bootstrap-editable/js/bootstrap-editable.js"></script>
+          <!-- Momment JS Local-->
+          <script src="js/moment.min.js"></script>
+          <!-- Funciones JS Local-->
+          <script type="text/javascript" src="js/functions.ajax.js"></script>
         </br>
         </br>
         </br>

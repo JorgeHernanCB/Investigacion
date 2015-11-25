@@ -1,51 +1,52 @@
  <?php
 
  ?>
- <div class="col-sm-6 col-md-4 text-center">
-        <div class="well well-lg">
-            <section>
-              
-              <img class="img-circle"src="adjuntos/imagenes/bat.jpg" alt="Generic placeholder image" width="140" height="140">
-              <h3><?php echo $_SESSION['docenteApellido'] ?></h3>
-              <h3><?php echo $_SESSION['docenteNombre']?></h3>
-              <h3><small>Docente</small></h3>
-              <span class="glyphicon glyphicon-phone"></span> </br>
-              <h5><strong>Telefono Celular:</strong><?php echo $_SESSION['telefonoCelular']?></h5>
-              <h5><strong>Telefono Fijo:</strong><?php echo $_SESSION['telefonoFijo']?></h5>
-              </br>
-              <span class="glyphicon glyphicon-envelope"></span>
-             <h5><strong>Correo:</strong><?php echo $_SESSION['correo']?></h5>
-              
-            </section>
-        </div> 
-        <button name="submit" href="" id="" class="btn btn-success" data-toggle="modal" data-target="#myModal"> 
-          <span class="glyphicon glyphicon-cog"></span>
-          Actualizar Información 
-        </button>
-       
-      <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+       <div class="col-sm-6 col-md-4 text-center">
+              <div class="well well-lg">
+                  <section>
+                    
+                    <img class="img-circle" src="<?php echo $_SESSION['fotografia'] ?>" alt="Generic placeholder image" width="140" height="140">
+                    
+                    <h3><?php echo $_SESSION['docenteApellido'] ?></h3>
+                    <h3><?php echo $_SESSION['docenteNombre']?></h3>
+                    <h3><small>Docente</small></h3>
+                    <span class="glyphicon glyphicon-phone"></span> </br>
+                    <h5><strong>Telefono Celular:</strong><?php echo $_SESSION['telefonoCelular']?></h5>
+                    <h5><strong>Telefono Fijo:</strong><?php echo $_SESSION['telefonoFijo']?></h5>
+                    </br>
+                    <span class="glyphicon glyphicon-envelope"></span>
+                   <h5><strong>Correo:</strong><?php echo $_SESSION['correo']?></h5>
+                    
+                  </section>
+              </div> 
+              <button name="submit" href="" id="" class="btn btn-success" data-toggle="modal" data-target="#myModal"> 
+                <span class="glyphicon glyphicon-cog"></span>
+                Actualizar Información 
+              </button>
+             
+            <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
 
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">actualizando Información</h4>
-                </div>
-                <div class="modal-body">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">actualizando Información</h4>
+                      </div>
+                      <div class="modal-body">
 
-                        Hola!!!
+                              Hola!!!
 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
 
-            </div>
-        </div><!-- Fin Modal -->  
-</div>
+                  </div>
+              </div><!-- Fin Modal -->  
+      </div>
 
            <div class="col-sm-6 col-md-8 text-center">
              <div class="thumbnail">
@@ -56,63 +57,51 @@
 
                           <tr>
                             <td><strong>Fecha de nacimiento:</strong> </td>
-                            <td><?php echo $_SESSION['fechaNacimiento']?></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="fechaNacimiento" class=""><?php echo $_SESSION['fechaNacimiento']?></a></td>
                           </tr>
                           <tr>
                             <td><strong>Lugar de nacimiento:</strong></td>
-                            <td><?php echo $_SESSION['lugarNacimiento']?> </h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="lugarNacimiento" class=""><?php echo $_SESSION['lugarNacimiento']?></a></td>
                           </tr>
                           <tr>
                             <td><strong>Genero:</strong></td>
-                            <td> </strong><?php echo $_SESSION['genero']?> </h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="genero" class=""><?php echo $_SESSION['genero']?></a></td>
                           </tr>
                           <tr>
                             <td><strong>Estado Civil:</strong></td>
-                            <td><?php echo $_SESSION['EstadoCivil']?> </h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="EstadoCivil" class=""><?php echo $_SESSION['EstadoCivil']?></a></td>
                           </tr>
                           <tr>
-                            <td><strong>Numero de hijos: </strong></td>
-                            <td><?php echo $_SESSION['numeroHijos']?> </h5> </td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><strong>Número de hijos: </strong></td>
+                            <td><a href="#" id="numeroHijos" class=""><?php echo $_SESSION['numeroHijos']?></a></td>
                           </tr>
                           <tr>
                             <td><strong>Facultad:</strong> </td>
-                            <td><?php echo $_SESSION['facultad']?> </h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="facultad" class=""><?php echo $_SESSION['facultad']?></a></td>
                           </tr>
                           <tr>
                            <td><strong>Programa: </strong> </td>
-                           <td><?php echo $_SESSION['programa']?> </h5></td>
-                           <td><button type="button" class="btn btn-link">Editar</button></td>
+                           <td><a href="#" id="programa" class=""><?php echo $_SESSION['programa']?></a></td>
                           </tr>
                           <tr>
-                            <td><strong>Direccion:  </strong> </td>
-                            <td><?php echo $_SESSION['direccion']?> Municipio <?php echo $_SESSION['municipio']?></h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><strong>Dirección:  </strong> </td>
+                            <td><a href="#" id="direccion" class=""><?php echo $_SESSION['direccion']?> Municipio <?php echo $_SESSION['municipio']?></a></td>
                           </tr>
                           <tr>
                             <td><strong>Tipo de investigador:  </strong></td>
-                            <td><?php echo $_SESSION['tipoInvestigador']?> </h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><a href="#" id="tipoInvestigador" class=""><?php echo $_SESSION['tipoInvestigador']?></a></td>
                           </tr>
                           <tr>
-                            <td><strong>Grupo de investigacion: </strong></td>
-                            <td><?php echo $_SESSION['grupoInvestigacion']?></h5></td>
-                            <td><button type="button" class="btn btn-link">Editar</button></td>
+                            <td><strong>Grupo de investigación: </strong></td>
+                            <td><a href="#" id="grupoInvestigacion" class=""><?php echo $_SESSION['grupoInvestigacion']?></a></td>
                           </tr>
                           <tr>
-                           <td><strong>Linea de investigacion: </strong> </td>
-                           <td> <?php echo $_SESSION['lineaInvestigacion']?></h5></td>
-                           <td><button type="button" class="btn btn-link">Editar</button></td>
+                           <td><strong>Linea de investigación: </strong> </td>
+                           <td><a href="#" id="lineaInvestigacion" class=""><?php echo $_SESSION['lineaInvestigacion']?></a></td>
                          </tr>
                          <tr>
-                          <td><strong>Tarjeta profecional:  </strong></td>
-                          <td><?php echo $_SESSION['tarjetaProfesional']?> </h5></td>
-                          <td><button type="button" class="btn btn-link">Editar</button></td>
+                          <td><strong>Tarjeta profesional:  </strong></td>
+                          <td><a href="#" id="tarjetaProfesional" class=""><?php echo $_SESSION['tarjetaProfesional']?></a></td>
                         </tr>
 
                       </table>
@@ -134,7 +123,7 @@
               <li role="presentation"><a href="#seccion10" aria-controls="seccion10" data-toggle="tab">Eventos Cientificos</a></li>
             </ul>
 
-
+            <!-- Pestañas -->
             <div class="tab-content">
 
               <div role="tabpanel" class="tab-pane in active" id="seccion1">
@@ -178,11 +167,40 @@
                        <td><strong>Servicio:</strong> </td><td><?php echo $_SESSION['servicioInstitucion']?></td>
                       </tr>
                   </table>  
+
+                  <?php
+                  /*
+                  intento de pasar una arreglo (resultado de una consulta)
+                  por una variable de sesión
+                  */
+                  if( $_SESSION['row']){
+                    $row = $_SESSION['row'];
+                    echo "<table > \n";
+                    //Mostramos los nombres de las tablas 
+                    echo "<tr> \n"; 
+                    
+                    while ($row = mysql_fetch_array($row)){ 
+                                 
+                                echo "<tr> \n"; 
+                                echo "<td>".$row["id"]."</td> \n"; 
+                                echo "<td>".$row["usuario"]."</td> \n"; 
+                                echo "<td>".$row["password"]."</td> \n"; 
+                                echo "<td>".$row["cedulaDocente"]."</td> \n"; 
+                                echo "</tr> \n"; 
+                        } while ($row = mysql_fetch_array($row)); 
+                                echo "</table> \n"; 
+                   
+                  } else { 
+                    echo "¡ No se ha encontrado ningún registro !"; 
+                    }
+                  ?>
+
                   <?php }else{ echo "<h2> no hay información institucional registrada!!! </h2> </br> </br>"; } ?>
                   <button name="submit" href="" id="" class="btn btn-info"> Actualizar Información </button>
 
               </div>
 
+              <!-- Pestaña de información academica -->
               <div role="tabpanel" class="tab-pane" id="seccion2">
                 <h3>Información Academica</h3>   
                 <?php if(isset($_SESSION['tipo'] ) &&  isset($_SESSION['titulo'])){?>
@@ -209,39 +227,72 @@
                 <?php }else{ echo "<h2> no hay información academica registrada!!! </h2> </br> </br>"; } ?>
                 <button name="submit" href="" id="" class="btn btn-info"> Actualizar Información </button>
 
-              </div>
+              </div><!-- FIN Pestaña de información academica -->
 
+              <!-- Pestaña de otros estudios -->
               <div role="tabpanel" class="tab-pane" id="seccion3">
 
-                <h3>Otros estudios</h3>   
-                 <?php if(isset($_SESSION['tipoCursoOE'] ) &&  isset($_SESSION['evidenciaCursoOE'])){?>
-                  <table class="table table-hover thumbnail">
-                      <tr>
-                       <td><strong>Tipo de curso/Diplomado:</strong> </td><td><h5><?php echo $_SESSION['tipoCursoOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Evidencia del curso/Diplomado:</strong> </td><td><h5><?php echo $_SESSION['evidenciaCursoOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Nombre del curso/Diplomado:</strong> </td><td><h5><?php echo $_SESSION['nombreOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Instotución:</strong> </td><td><h5><?php echo $_SESSION['institucionOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Lugar:</strong> </td><td><h5><?php echo $_SESSION['lugarOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Año:</strong> </td><td><h5><?php echo $_SESSION['añoOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Semestre:</strong> </td><td><h5><?php echo $_SESSION['semestreOE']?></h5></td>
-                      </tr>
-                      <tr>
-                       <td><strong>Tipo de participación:</strong> </td><td><h5><?php echo $_SESSION['tipoPArticipacionOE']?></h5></td>
-                      </tr>               
-                  </table>  
-                  <?php }else{ echo "<h2> no hay estudios registrados!!! </h2> </br> </br>"; } ?>
+                <h3>Otros estudios</h3>
+                
+                  <?php 
+                    if(isset($_SESSION['tipoCursoOE'], $_SESSION['evidenciaCursoOE']) ){
+                      require_once("Connections/ConnectionBD.php");
+                      $ConnectionBD = new ConnectionBD();
+                      $sql = 'SELECT * 
+                              FROM otrosestudios 
+                              INNER JOIN docente 
+                              INNER JOIN loguin ON otrosestudios.codigoDocente=docente.cedulaDocente AND loguin.cedulaDocente=docente.cedulaDocente 
+                              WHERE loguin.usuario= :login_username';
+                      $consultaPreparada = $ConnectionBD->query_prepare($sql);
+                      $consultaPreparada->bindParam(":login_username",$_SESSION['username']);
+                      $consultaPreparada->execute();
+                      $resultado = $consultaPreparada->fetchAll(); 
+                      foreach ($resultado as $fila => $value) {
+                              ?>
+                              <table class="table table-hover thumbnail">
+                              <h3>Curso</h3>
+                              <tr>
+                                 <td><strong>Tipo de curso/Diplomado:</strong> </td>
+                                 <td><h5><?php echo $value['tipoCurso']; ?></h5></td>
+                              </tr>
+                                <tr>
+                                 <td><strong>Evidencia del curso/Diplomado:</strong></td>
+                                 <td><img id="<?php echo $value['evidenciaCurso']; ?>" class="descargar_archivo" src="imagenes/pdf.png" alt="Descargar PDF"></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Nombre del curso/Diplomado:</strong></td>
+                                 <td><h5><?php echo $value['nombre']; ?></h5></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Institución:</strong></td>
+                                 <td><h5><?php echo $value['institucion']; ?></h5></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Lugar:</strong></td>
+                                 <td><h5><?php echo $value['lugar']; ?></h5></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Año:</strong></td>
+                                 <td><h5><?php echo $value['ano']; ?></h5></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Semestre:</strong></td>
+                                 <td><h5><?php echo $value['semestre']; ?></h5></td>
+                              </tr>
+                              <tr>
+                                 <td><strong>Tipo de participación:</strong></td>
+                                 <td><h5><?php echo $value['tipoParticipacion']; ?></h5></td>
+                              </tr>
+                              </table>
+                                                            
+                            <?php
+                          
+                        
+                      }
+                    }else{ echo "<h2> El usuario no tiene estudios registrados</h2> </br> </br>"; }
+                  ?>
+                
+                  
                   <button name="submit" href="" id="" class="btn btn-info"  data-toggle="modal" data-target="#agregarCurso"> Agregar mas estudios </button>
 
                   <!-- Modal -->
@@ -255,48 +306,48 @@
                                 <h4 class="modal-title"><Strong>Agregar estudio</strong></h4>
                               </div>
                               <div class="modal-body">
-                                <form method="post" name="form1" role="form" action="../controlador/registrarEstudio.php" id="form-crear-docente" enctype="multipart/form-data">
+                                <form name="form1" id="form-registrar-curso" role="form">
                                     <table class="table table-hover thumbnail">
                                         <tr>
                                          <td>Tipo de curso/Diplomado: </td><td> 
-                                          <input type="text" name="tipoCurso" class="form-control" id="" placeholder="ingrese el tipo" required>
+                                          <input type="text" name="tipoCurso" class="form-control" id="tipo-curso" placeholder="ingrese el tipo" required>
                                          </td>
                                         </tr>
                                         <tr>
                                          <td>Evidencia del curso/Diplomado: </td><td> <input type="file" name="evidenciaCurso" class="filestyle" data-input="false" name="evidencia-curso" id="evidencia-curso" value="" size="32" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Nombre del curso/Diplomado: </td><td><input type="text" name="nombreCurso" class="form-control" id="" placeholder="ingrese el nombre" required></td>
+                                         <td>Nombre del curso/Diplomado: </td><td><input type="text" name="nombreCurso" class="form-control" id="nombre-curso" placeholder="ingrese el nombre" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Institución: </td><td><input type="text" name="institucion" class="form-control" id="" placeholder="ingrese la institucion" required></td>
+                                         <td>Institución: </td><td><input type="text" name="institucion" class="form-control" id="institucion" placeholder="ingrese la institucion" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Lugar: </td><td><input type="text" name="lugar" class="form-control" id="" placeholder="ingrese el lugar" required></td>
+                                         <td>Lugar: </td><td><input type="text" name="lugar" class="form-control" id="lugar" placeholder="ingrese el lugar" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Año:</td><td><input type="text" name="ano" class="form-control" id="" placeholder="ingrese el año" required></td>
+                                         <td>Año:</td><td><input type="text" name="ano" class="form-control" id="ano" placeholder="ingrese el año" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Semestre:</td><td><input type="text" name="semestre" class="form-control" id="" placeholder="ingrese el semestre" required></td>
+                                         <td>Semestre:</td><td><input type="text" name="semestre" class="form-control" id="semestre" placeholder="ingrese el semestre" required></td>
                                         </tr>
                                         <tr>
-                                         <td>Tipo de participación: </td><td><input type="text" name="tipoParticipación" class="form-control" id="" placeholder="ingrese el tipo" required></td>
+                                         <td>Tipo de participación: </td><td><input type="text" name="tipoParticipación" class="form-control" id="tipo-participacion" placeholder="ingrese el tipo" required></td>
                                         </tr>               
                                     </table>  
                                 
                                     </div><!-- Fin modal body -->
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Agregar</button>
+                                      <div id="btningresarcurso" class="btn btn-primary btn-block">Agregar</div>
                                     </div>
                                   </form>
                             </div><!-- Fin Modal content -->
 
                           </div><!-- Fin class="modal-content" -->
                       </div><!-- Fin modal -->
+              </div><!-- FIN Pestaña de otros estudios -->
 
-              </div>
-
+              <!-- Pestaña de experiencia academica -->
               <div role="tabpanel" class="tab-pane" id="seccion4">
                 <h3>Experiencia Académica</h3>   
                 <?php if(isset($_SESSION['institucionAcademicaEA'] ) &&  isset($_SESSION['cargoEA'])){?>
@@ -371,8 +422,9 @@
                           </div>
                         </div>
 
-              </div>
+              </div><!-- FIN Pestaña de experiencia academica -->
 
+              <!-- Pestaña de experiencia laboral -->
               <div role="tabpanel" class="tab-pane" id="seccion5">
                       <h3>Experiencia Laboral</h3>   
                       <?php if(isset($_SESSION['institucionEL'] ) &&  isset($_SESSION['tipoLaborEL'])){?>
@@ -402,9 +454,9 @@
                       <?php }else{ echo "<h2> no hay experiencia registrados!!! </h2> </br> </br>"; } ?>
                       <button name="submit" href="" id="" class="btn btn-info"> Agregar experiencia </button>
 
-              </div>  
+              </div> <!-- FIN Pestaña de experiencia laboral -->
              
-
+              <!-- Pestaña de actividades academicas -->
               <div role="tabpanel" class="tab-pane" id="seccion6">
 
                       <h3>Actividades Academicas</h3>   
@@ -432,8 +484,9 @@
                       <?php }else{ echo "<h2> no hay Actividades academicas registradas!!! </h2> </br> </br>"; } ?>
                       <button name="submit" href="" id="" class="btn btn-info"> Agregar actividad </button>
 
-              </div>
+              </div><!-- FIN Pestaña de actividades academicas -->
 
+              <!-- Pestaña de proyectos de investigación -->
               <div role="tabpanel" class="tab-pane" id="seccion7">
 
                     <h3>Proyectos de investigación</h3>   
@@ -458,8 +511,9 @@
                     <?php }else{ echo "<h2> no hay proyectos de investigación registrados!!! </h2> </br> </br>"; } ?>
                     <button name="submit" href="" id="" class="btn btn-info"> Agregar Proyecto </button>
 
-              </div>
+              </div><!-- FIN Pestaña de proyectos de investigación -->
 
+              <!-- Pestaña de trabajos dirijidos -->
               <div role="tabpanel" class="tab-pane" id="seccion8">
 
                        <h3>Trabajos Dirijidos</h3>   
@@ -487,8 +541,9 @@
                         <?php }else{ echo "<h2> no hay trabajos dirijidos registrados!!! </h2> </br> </br>"; } ?>
                         <button name="submit" href="" id="" class="btn btn-info"> Agregar Trabajo </button>
 
-              </div>
+              </div><!-- FIN Pestaña de trabajos dirijidos -->
 
+              <!-- Pestaña de publicaciones -->
               <div role="tabpanel" class="tab-pane" id="seccion9">
 
                       <h3>Publicaciones</h3>   
@@ -551,9 +606,9 @@
                         </table>   
                         <?php }else{ echo "<h2> no hay publicaciones registradas!!! </h2> </br> </br>"; } ?>
                         <button name="submit" href="" id="" class="btn btn-info"> Agregar publicación </button>
+              </div><!-- FIN Pestaña de publicaciones -->
 
-              </div>
-
+              <!-- Pestaña de eventos cientificos -->
               <div role="tabpanel" class="tab-pane" id="seccion10">
                       <h3>Eventos cientificos</h3>   
                       <?php if(isset($_SESSION['tituloTrabajoTD'] ) &&  isset($_SESSION['nivelFormacionTD'])){?>
@@ -583,8 +638,8 @@
                     <?php }else{ echo "<h2> no hay eventos cientificos registradas!!! </h2> </br> </br>"; } ?>
                     <button name="submit" href="" id="" class="btn btn-info"> Agregar Evento</button>
 
-              </div>
-            </div>
+              </div><!-- FIN Pestaña de evebtos cientificos -->
+            </div><!-- FIN Pestaña -->
           
 
 
